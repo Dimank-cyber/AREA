@@ -1,1 +1,2 @@
 # ScriptSakingPusat
+#install
