@@ -30,7 +30,7 @@ clear;clear;clear
 
   # // Banner
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e "  Welcome To FranataSTORE Project Script Installer ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
+echo -e "  Welcome To DimankSTORE Project Script Installer ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
 echo -e "     This Will Quick Setup VPN Server On Your Server"
 echo -e "         Auther : ${green} Tunneling VVIP ${NC}${YELLOW}(${NC} ${green}FranataSTORE ${NC}${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
