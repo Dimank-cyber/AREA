@@ -21,7 +21,7 @@ gem install lolcat
 #=================
 clear
   # // Exporint IP AddressInformation
-export IP=$( curl -sS ipinfo.io/ip )
+export IP=$( curl -sS 103.160.62.155 )
 
 # // Clear Data
 clear
@@ -38,7 +38,7 @@ echo ""
 sleep 5
 ###### IZIN SC 
 ipsaya=$(wget -qO- ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+data_server=$(curl -sS https://github.com/Dimank-cyber/AREA/main/izinnn | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
 data_ip="https://nata.serv00.net/license/vip"
 checking_sc() {
