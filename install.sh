@@ -30,7 +30,7 @@ clear;clear;clear
 
   # // Banner
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e "  Welcome To FranataSTORE Project Script Installer ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
+echo -e "  Welcome To DimankSTOREE Project Script Installer ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
 echo -e "     This Will Quick Setup VPN Server On Your Server"
 echo -e "         Auther : ${green} Tunneling VVIP ${NC}${YELLOW}(${NC} ${green}FranataSTORE ${NC}${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
@@ -115,7 +115,7 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://nata.serv00.net/license/vip | grep $MYIP | awk '{print $2}')
+username=$(curl https://github.com/Dimank-cyber/AREA/main/izinnn | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
 expx=$(curl https://nata.serv00.net/license/vip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
@@ -376,10 +376,10 @@ function password_default() {
 pkg install -y curl
 
 # Ganti TOKEN_BOT_ANDA dengan token bot Telegram Anda
-TOKEN_BOT="6206327239:AAEY-gCnoyfjQYWRuTU0R_Lp_y3ODehABsE"
+TOKEN_BOT="
 
 # Ganti CHAT_ID_ANDA dengan ID obrolan Telegram yang ingin Anda tuju
-CHAT_ID="-1001818371525"
+CHAT_ID="-manusiabiasa3"
 clear
 # Mendapatkan informasi sistem
 export OS_Name=$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )
@@ -399,7 +399,7 @@ ISP   : $ISP
 CITY : $CITY
 RAM : $Ram_Total MB
 ╾───────────────╼
-BY: @FranataaSTORE
+BY: @DimankSTOREE
 ╾───────────────╼"
 clear
 # Mengirim pesan ke Telegram menggunakan Bot API
@@ -483,9 +483,9 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
  
     # // Ambil Config Server
-    wget -O /etc/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1
     #wget -O /usr/local/bin/xray "${REPO}xray/xray.linux.64bit" >/dev/null 2>&1
-    wget -O /etc/systemd/system/runn.service "${REPO}xray/runn.service" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/xray/runn.service "${REPO}xray/runn.service" >/dev/null 2>&1
     #chmod +x /usr/local/bin/xray
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
@@ -496,8 +496,8 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
     print_install "Memasang Konfigurasi Packet"
-    wget -O /etc/haproxy/haproxy.cfg "${REPO}xray/haproxy.cfg" >/dev/null 2>&1
-    wget -O /etc/nginx/conf.d/xray.conf "${REPO}xray/xray.conf" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/xray/haproxy.cfg "${REPO}xray/haproxy.cfg" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/xray/xray.conf "${REPO}xray/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
     curl ${REPO}ssh/nginx.conf > /etc/nginx/nginx.conf
@@ -535,7 +535,7 @@ print_success "Konfigurasi Packet"
 function ssh(){
 clear
 print_install "Memasang Password SSH"
-    wget -O /etc/pam.d/common-password "${REPO}ssh/password"
+    wget -O https://github.com/Dimank-cyber/AREA/main/ssh/password "${REPO}ssh/password"
 chmod +x /etc/pam.d/common-password
 
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration
@@ -608,13 +608,13 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit Quota"
-wget -q -O /usr/local/sbin/quota "${REPO}limit/quota"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/limit/quota "${REPO}limit/quota"
 chmod +x /usr/local/sbin/quota
 chmod + x /usr/local/sbin/quota
 cd /usr/local/sbin/
 sed -i 's/\r//' quota
 cd
-wget -q -O /usr/bin/limit-ip "${REPO}limit/limit-ip"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/limit/limit-ip "${REPO}limit/limit-ip"
 chmod +x /usr/bin/*
 cd /usr/bin
 sed -i 's/\r//' limit-ip
@@ -728,11 +728,11 @@ systemctl restart qmtr
 systemctl enable qmtr
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
-wget -q -O /usr/local/kyt/udp-mini "${REPO}badvpn/udp-mini"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/badvpn/udp-mini "${REPO}badvpn/udp-mini"
 chmod +x /usr/local/kyt/udp-mini
-wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
-wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
-wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/badvpn/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/badvpn/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/badvpn/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
 systemctl disable udp-mini-1
 systemctl stop udp-mini-1
 systemctl enable udp-mini-1
@@ -752,7 +752,7 @@ function ssh_slow(){
 clear
 # // Installing UDP Mini
 print_install "Memasang modul SlowDNS Server"
-    wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
+    wget -q https://github.com/Dimank-cyber/AREA/main/slowdns/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
     bash /tmp/nameserver | tee /root/install.log
  print_success "SlowDNS"
@@ -762,7 +762,7 @@ clear
 function ins_SSHD(){
 clear
 print_install "Memasang SSHD"
-wget -q -O /etc/ssh/sshd_config "${REPO}ws/sshd" >/dev/null 2>&1
+wget -q -O https://github.com/Dimank-cyber/AREA/main/ws/sshd "${REPO}ws/sshd" >/dev/null 2>&1
 chmod 700 /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 systemctl restart ssh
@@ -776,7 +776,7 @@ clear
 print_install "Menginstall Dropbear"
 # // Installing Dropbear
 apt-get install dropbear -y > /dev/null 2>&1
-wget -q -O /etc/default/dropbear "${REPO}ssh/dropbear.conf"
+wget -q -O https://github.com/Dimank-cyber/AREA/main/ssh/dropbear.conf "${REPO}ssh/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
 /etc/init.d/dropbear status
@@ -811,8 +811,7 @@ function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
 #OpenVPN
-wget ${REPO}ssh/openvpn &&  chmod +x openvpn && ./openvpn
-/etc/init.d/openvpn restart
+wget ${REPO}ssh/openvpn &&  chmod +x openvpn && .https://github.com/Dimank-cyber/AREA//main/ssh/openvpn/openvpn restart
 print_success "OpenVPN"
 }
 
@@ -822,7 +821,7 @@ print_install "Memasang Backup Server"
 #BackupOption
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${REPO}backup/rclone.conf"
+wget -O https://github.com/Dimank-cyber/AREA/main/backup/rclone.conf "${REPO}backup/rclone.conf"
 #Install Wondershaper
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git
@@ -848,7 +847,7 @@ password jokerman77
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-wget -q -O /etc/ipserver "${REPO}ssh/ipserver" && bash /etc/ipserver
+wget -q https://github.com/Dimank-cyber/AREA/main/ssh/ipserver "${REPO}ssh/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
 }
 
@@ -874,8 +873,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    wget ${REPO}bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
-print_success "Swap 1 G"
+    wget ${REPO}bbr.sh &&  chmod +x bbr.sh && .https://github.com/Dimank-cyber/AREA/main/bbr.sh "Swap 1 G"
 }
 
 function ins_Fail2ban(){
@@ -900,16 +898,16 @@ echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/kyt.txt "${REPO}ssh/issue.net"
+wget https://github.com/Dimank-cyber/AREA/main/ssh/issue.net "${REPO}ssh/issue.net"
 print_success "Fail2ban"
 }
 
 function ins_epro(){
 clear
 print_install "Menginstall ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}ws/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}ws/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}ws/ws.service" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/ws/ws "${REPO}ws/ws" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/ws/tun.conf "${REPO}ws/tun.conf" >/dev/null 2>&1
+    wget -O https://github.com/Dimank-cyber/AREA/main/ws/ws.service "${REPO}ws/ws.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
     chmod +x /usr/bin/ws
     chmod 644 /usr/bin/tun.conf
@@ -920,7 +918,7 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}ws/ftvpn" >/dev/null 2>&1
+wget -O https://github.com/Dimank-cyber/AREA/main/ws/ftvpn "${REPO}ws/ftvpn" >/dev/null 2>&1
 chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
