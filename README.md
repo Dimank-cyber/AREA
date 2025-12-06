@@ -1,3 +1,1 @@
-#AREA#
-
-H
+# SCRIPT SAKING PUSAT
