@@ -899,7 +899,7 @@ echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/kyt.txt "${REPO}ssh/issue.net"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ssh/issue.net "${REPO}ssh/issue.net"
 print_success "Fail2ban"
 }
 
@@ -907,8 +907,8 @@ function ins_epro(){
 clear
 print_install "Menginstall ePro WebSocket Proxy"
     wget -O /usr/bin/ws "${REPO}ws/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}ws/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}ws/ws.service" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ws/tun.conf "${REPO}ws/tun.conf" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ws/ws.service "${REPO}ws/ws.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
     chmod +x /usr/bin/ws
     chmod 644 /usr/bin/tun.conf
@@ -981,7 +981,7 @@ print_success "All Packet"
 function menu(){
     clear
     print_install "Memasang Menu Packet"
-    wget ${REPO}menu/menu.zip
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/menu/menu
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
