@@ -1,1 +1,1 @@
-# setup.sh
+# https://github.com/Dimank-cyber/AREA
