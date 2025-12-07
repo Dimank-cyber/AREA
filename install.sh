@@ -30,15 +30,15 @@ clear;clear;clear
 
   # // Banner
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e "  Welcome To FranataSTORE Project Script Installer ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
+echo -e "  Welcome To DimankSTORE Project Script Installer ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
 echo -e "     This Will Quick Setup VPN Server On Your Server"
-echo -e "         Auther : ${green} Tunneling VVIP ${NC}${YELLOW}(${NC} ${green}FranataSTORE ${NC}${YELLOW})${NC}"
+echo -e "         Auther : ${green} Tunneling VVIP ${NC}${YELLOW}(${NC} ${green}DimankSTOREE ${NC}${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 sleep 5
 ###### IZIN SC 
 ipsaya=$(wget -qO- ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+data_server=$(curl -v --insecure --silent https://raw.githubusercontent.com/Dimank-cyber/2025//main/special/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
 data_ip="https://nata.serv00.net/license/vip"
 checking_sc() {
@@ -115,7 +115,7 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://nata.serv00.net/license/vip | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/Dimank-cyber/2025//main/special | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
 expx=$(curl https://nata.serv00.net/license/vip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
@@ -376,10 +376,9 @@ function password_default() {
 pkg install -y curl
 
 # Ganti TOKEN_BOT_ANDA dengan token bot Telegram Anda
-TOKEN_BOT="6206327239:AAEY-gCnoyfjQYWRuTU0R_Lp_y3ODehABsE"
-
+TOKEN_BOT="
 # Ganti CHAT_ID_ANDA dengan ID obrolan Telegram yang ingin Anda tuju
-CHAT_ID="-1001818371525"
+CHAT_ID="-manusiabiasa3"
 clear
 # Mendapatkan informasi sistem
 export OS_Name=$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )
@@ -399,7 +398,7 @@ ISP   : $ISP
 CITY : $CITY
 RAM : $Ram_Total MB
 ╾───────────────╼
-BY: @FranataaSTORE
+BY: @DimankSTOREE
 ╾───────────────╼"
 clear
 # Mengirim pesan ke Telegram menggunakan Bot API
@@ -483,7 +482,7 @@ latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases |
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version $latest_version
  
     # // Ambil Config Server
-    wget -O /etc/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1
     #wget -O /usr/local/bin/xray "${REPO}xray/xray.linux.64bit" >/dev/null 2>&1
     wget -O /etc/systemd/system/runn.service "${REPO}xray/runn.service" >/dev/null 2>&1
     #chmod +x /usr/local/bin/xray
