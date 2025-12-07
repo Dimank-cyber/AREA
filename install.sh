@@ -775,7 +775,7 @@ clear
 print_install "Menginstall Dropbear"
 # // Installing Dropbear
 apt-get install dropbear -y > /dev/null 2>&1
-wget -q -O /etc/default/dropbear "${REPO}ssh/dropbear.conf"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ssh/dropbear.conf "${REPO}ssh/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
 /etc/init.d/dropbear status
@@ -810,7 +810,7 @@ function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
 #OpenVPN
-wget ${REPO}ssh/openvpn &&  chmod +x openvpn && ./openvpn
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ssh/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -821,7 +821,7 @@ print_install "Memasang Backup Server"
 #BackupOption
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "${REPO}backup/rclone.conf"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/backup/rclone.conf "${REPO}backup/rclone.conf"
 #Install Wondershaper
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git
@@ -847,7 +847,7 @@ password jokerman77
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-wget -q -O /etc/ipserver "${REPO}ssh/ipserver" && bash /etc/ipserver
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ssh/ipserver "${REPO}ssh/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
 }
 
@@ -873,7 +873,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc sourcestats -v
     chronyc tracking -v
     
-    wget ${REPO}bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
 
