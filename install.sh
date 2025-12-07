@@ -484,7 +484,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     # // Ambil Config Server
     wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1
     #wget -O /usr/local/bin/xray "${REPO}xray/xray.linux.64bit" >/dev/null 2>&1
-    wget -O /etc/systemd/system/runn.service "${REPO}xray/runn.service" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/xray/runn.service "${REPO}xray/runn.service" >/dev/null 2>&1
     #chmod +x /usr/local/bin/xray
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
@@ -495,8 +495,8 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     curl -s ipinfo.io/city >>/etc/xray/city
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >>/etc/xray/isp
     print_install "Memasang Konfigurasi Packet"
-    wget -O /etc/haproxy/haproxy.cfg "${REPO}xray/haproxy.cfg" >/dev/null 2>&1
-    wget -O /etc/nginx/conf.d/xray.conf "${REPO}xray/xray.conf" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/xray/haproxy.cfg "${REPO}xray/haproxy.cfg" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/xray/xray.conf "${REPO}xray/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
     curl ${REPO}ssh/nginx.conf > /etc/nginx/nginx.conf
@@ -607,13 +607,13 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit Quota"
-wget -q -O /usr/local/sbin/quota "${REPO}limit/quota"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/limit/quota "${REPO}limit/quota"
 chmod +x /usr/local/sbin/quota
 chmod + x /usr/local/sbin/quota
 cd /usr/local/sbin/
 sed -i 's/\r//' quota
 cd
-wget -q -O /usr/bin/limit-ip "${REPO}limit/limit-ip"
+wget -q https://raw.githubusercontent.com/Dimank-cyber/AREA/main/limit/limit-ip "${REPO}limit/limit-ip"
 chmod +x /usr/bin/*
 cd /usr/bin
 sed -i 's/\r//' limit-ip
@@ -729,9 +729,9 @@ systemctl enable qmtr
 mkdir -p /usr/local/kyt/
 wget -q -O /usr/local/kyt/udp-mini "${REPO}badvpn/udp-mini"
 chmod +x /usr/local/kyt/udp-mini
-wget -q -O /etc/systemd/system/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
-wget -q -O /etc/systemd/system/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
-wget -q -O /etc/systemd/system/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/badvpn/udp-mini-1.service "${REPO}badvpn/udp-mini-1.service"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/badvpn/udp-mini-2.service "${REPO}badvpn/udp-mini-2.service"
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/badvpn/udp-mini-3.service "${REPO}badvpn/udp-mini-3.service"
 systemctl disable udp-mini-1
 systemctl stop udp-mini-1
 systemctl enable udp-mini-1
@@ -751,7 +751,7 @@ function ssh_slow(){
 clear
 # // Installing UDP Mini
 print_install "Memasang modul SlowDNS Server"
-    wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
+    wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/slowdns/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
     bash /tmp/nameserver | tee /root/install.log
  print_success "SlowDNS"
@@ -761,7 +761,7 @@ clear
 function ins_SSHD(){
 clear
 print_install "Memasang SSHD"
-wget -q -O /etc/ssh/sshd_config "${REPO}ws/sshd" >/dev/null 2>&1
+wget https://raw.githubusercontent.com/Dimank-cyber/AREA/main/ws/sshd "${REPO}ws/sshd" >/dev/null 2>&1
 chmod 700 /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 systemctl restart ssh
