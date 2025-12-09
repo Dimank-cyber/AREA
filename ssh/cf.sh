@@ -5,9 +5,9 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 apt install jq curl -y >/dev/null 2>&1
 read -rp "Sub Domain (Contoh: vip86): " -e sub
-DOMAIN=franata.web.id
-SUB_DOMAIN=${sub}.franata.web.id0
-CF_ID=franata868@gmail.com
+DOMAIN=dimanksstore.my.id
+SUB_DOMAIN=${sub}.dimanksstore.my.id
+CF_ID=adiibnurohman23@gmail.com
 CF_KEY=31ce32a5203088e0482bb33ef354b33093213
 set -euo pipefail
 IP=$(wget -qO- ifconfig.me/ip);
