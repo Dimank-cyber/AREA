@@ -197,9 +197,9 @@ echo -e " ${z}│$NC [${r}00${NC}]$purple BACK TO EXIT MENU$NC ${KANAN} \E[0m\03
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$y Version$NC       ${Blue}=$NC V2.0"
-echo -e " ${z}│$NC$y User$NC          ${Blue}=$NC $username"
-echo -e " ${z}│$NC$y Script Status$NC ${Blue}=$NC $sts "
-echo -e " ${z}│$NC$y Expiry script$NC $Blue=$green $exp$NC($r $certifacate ${NC}Days )"
+echo -e " ${z}│$NC$y User$NC          ${Blue}=$NC $DimankSTOREE"
+echo -e " ${z}│$NC$y Script Status$NC ${Blue}=$NC $activr "
+echo -e " ${z}│$NC$y Expiry script$NC $Blue=$green $2026-2-9$NC($r $60 ${NC}Days )"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo
 read -p " Select menu : " opt
