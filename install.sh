@@ -38,7 +38,7 @@ echo ""
 sleep 5
 ###### IZIN SC 
 ipsaya=$(wget -qO- ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://raw.githubusercontent.com/Dimank-cyber/2025//main/special/ 2>&1 | grep Date | sed -e 's/< Date: //')
+data_server= https://raw.githubusercontent.com/Dimank-cyber/2025//main/special/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
 data_ip="https://nata.serv00.net/license/vip"
 checking_sc() {
@@ -54,8 +54,8 @@ checking_sc() {
     echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
     echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
     echo -e "             \033[0;33mContact Admin :${NC}"
-    echo -e "      \033[0;36mTelegram${NC} @FranataSTORE"
-    echo -e "      ${GREEN}WhatsApp${NC} 6282241967317"
+    echo -e "      \033[0;36mTelegram${NC} @manusiabiasa"
+    echo -e "      ${GREEN}WhatsApp${NC} 6287867272855"
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
     exit
   fi
